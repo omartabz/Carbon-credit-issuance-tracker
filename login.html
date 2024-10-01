@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CarbonAware Technologies </title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+    <div class="login-container">
+        <h2>Login</h2>
+        <form id="loginForm">
+            <div>
+                <label for="username">Username:</label>
+                <input type="text" id="username" required>
+            </div>
+            <div>
+                <label for="password">Password:</label>
+                <input type="password" id="password" required>
+            </div>
+            <button type="submit">Login</button>
+        </form>
+        <p id="errorMessage" style="display:none;">Invalid credentials, please try again.</p>
+        <p>Don't have an account? <a href="frontEnd_html\register.html">Register here</a></p>
+
+        <!-- Guest Button -->
+        <button id="guestButton">Guest</button>
+
+        <!-- Hidden guest sections -->
+        <div id="guest-sections" class="hidden">
+            <section id="about-us">
+                <a href="frontEnd_html\AboutUs.html">About Us</a>
+            </section>
+            <section id="services">
+                <a href="frontEnd_html\service.html">Services</a>
+            </section>
+            <section id="contact">
+                <div class="contact-info">
+                    <a href="frontEnd_html\contact.html">Contact</a>
+                </div>
+            </section>
+        </div>
+    </div>
+
+    <script src="frontEnd_Js\login.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Art of Independence</title>
+    <link rel="stylesheet" href="style.css"> <!-- Link to your CSS file -->
+</head>
+
+<body>
+    <header>
+        <nav>
+            <!-- Hamburger menu icon -->
+            <div class="menu-toggle" onclick="toggleMenu()">
+                <div></div>
+                <div></div>
+                <div></div>
+            </div>
+
+            <ul id="nav-links">
+
+                <li><a href="index.html">Home</a></li>
+                <li><a href="frontEnd_html\AboutUs.html">About Us</a></li>
+                <!-- <li><a href="companies.html">Register Your Company</a></li> -->
+                <li><a href="frontEnd_html/service.html">Services</a></li>
+                <li><a href="frontEnd_html/contact.html">Contact</a></li>
+                <li class="logout"><button id="logoutBtn">Logout</button></li>
+            </ul>
+        </nav>
+    </header>
+
+    <section id="hero">
+        <div class="hero-container">
+            <div class="logo">
+                <img src="LOGO.jpg" alt="CarbonAware Technologies Logo">
+            </div>
+            <div class="hero-content">
+                <h1>CarbonAware Technologies</h1>
+                <p>Monitor, Purchase, and Manage Your Carbon Credits Efficiently</p>
+                <h3 id="currentUser"></h3> <!-- Display the current user's name here -->
+            </div>
+        </div>
+    </section>
+
+    <div class="info-section">
+        <div class="info-content">
+            <p>Register your carbon credits company with us and join the global movement towards sustainability. Our
+                platform offers a seamless registration process, allowing you to showcase your commitment to reducing
+                carbon emissions. Stay ahead with real-time monitoring, fraud prevention tools, and gain visibility
+                among high-rated companies in the carbon market.</p>
+            <a href="CarbonDatabase/public/indexcarbondatabase.html" class="btn">Register Your Company</a>
+        </div>
+        <img src="images\register.jpg" alt="Carbon Credits" />
+    </div>
+
+    <div class="info-section">
+        <div class="info-content">
+            <p>Explore innovative carbon credit projects designed to combat climate change and promote sustainability.
+                Our
+                platform offers a curated selection of high-impact projects that generate carbon offsets, helping
+                businesses
+                and individuals reduce their carbon footprint. Whether you're looking to invest in renewable energy,
+                reforestation, or sustainable agriculture, find verified projects that align with your environmental
+                goals.
+                Join us in making a positive impact on the planet and contribute to a greener future.</p>
+            <a href="frontEnd_html/company.html" class="btn">🔍 Find Seller</a>
+        </div>
+        <img src="images\find_seller.jpg" alt="Carbon Credits" />
+    </div>
+
+
+    <footer class="footer-container">
+        <div class="footer-contact-info">
+            <div class="contact-info">
+                <h2>Contact Information</h2>
+                <p><strong>Address:</strong> 69 Kingsway Ave, Auckland Park, Johannesburg, 2092</p>
+                <p><strong>Phone:</strong> +27 71529 3562</p>
+                <p><strong>Email:</strong> TONK@yourcompany.com</p>
+            </div>
+            <div class="footer-social">
+                <h2>Follow Us</h2>
+                <p>Stay connected through our social platforms:</p>
+                <ul class="social-icons">
+                    <li><a href="#"><img src="images\facebook-icon.png" alt="Facebook"></a></li>
+                    <li><a href="#"><img src="images\Twitter.png" alt="Twitter"></a></li>
+                    <li><a href="#"><img src="images\linkdin.png" alt="LinkedIn"></a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>© 2024 CarbonAware Technologies. All rights reserved.</p>
+        </div>
+    </footer>
+
+
+    <script type="text/javascript">
+        function toggleMenu() {
+            const navLinks = document.getElementById('nav-links');
+            navLinks.classList.toggle('active');
+        }
+
+        document.addEventListener('DOMContentLoaded', function () {
+            const isLoggedIn = localStorage.getItem('isLoggedIn');
+            const currentUser = localStorage.getItem('currentUser');
+
+            if (!isLoggedIn || isLoggedIn !== 'true' || !currentUser) {
+                window.location.href = "login.html";
+            } else {
+                document.getElementById('currentUser').textContent = currentUser;
+            }
+
+            document.getElementById('logoutBtn').addEventListener('click', function () {
+                console.log('Logout button clicked!');
+                localStorage.removeItem('isLoggedIn');
+                localStorage.removeItem('currentUser');
+                window.location.href = "login.html";
+            });
+        });
+    </script>
+</body>
+
+</html>

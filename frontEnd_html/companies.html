@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Carbon Credits Issuance Tracker</title>
+    <style>
+        /* Basic styling for visibility */
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+            color: #333;
+            background: url('project.jpg') no-repeat center center/cover;
+            height: 100vh;
+        }
+
+        section {
+            padding: 20px;
+            background-color: #fff;
+            margin: 20px;
+            border-radius: 5px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+
+        h2 {
+            margin-top: 0;
+        }
+
+        #register-company {
+            display: none;
+            /* Initially hidden */
+        }
+
+        button {
+            margin-top: 10px;
+            padding: 10px 20px;
+            background-color: #28a745; /* Changed color for distinction */
+            color: #fff;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 16px;
+            transition: background-color 0.3s ease;
+        }
+
+        button:hover {
+            background-color: #218838; /* Darker shade for hover effect */
+        }
+
+        #toggle-register-btn {
+            margin: 20px;
+            background-color: #007BFF;
+        }
+
+        #toggle-register-btn:hover {
+            background-color: #0056b3;
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- Toggle Button for Registration Section -->
+    <button id="toggle-register-btn">Register Your Company</button>
+
+    <!-- Company Registration Section -->
+    <section id="register-company">
+        <h2>Register Your Company</h2>
+        <form id="registration-form">
+            <label for="company-name">Company Name:</label>
+            <input type="text" id="company-name" name="company-name" required>
+
+            <label for="credit-type">Type of Credits:</label>
+            <select id="credit-type" name="credit-type" required>
+                <option value="" disabled selected>Select credit type</option>
+                <option value="carbon">Carbon Credits</option>
+                <option value="renewable-energy">Renewable Energy Certificates</option>
+                <option value="water">Water Credits</option>
+            </select>
+
+            <label for="credits-available">Credits Available for Sale:</label>
+            <input type="number" id="credits-available" name="credits-available" min="1" required>
+
+            <label for="contact-info">Contact Information:</label>
+            <input type="text" id="contact-info" name="contact-info" required>
+
+            <button type="submit">Register</button>
+        </form>
+    </section>
+
+    <script>
+        // JavaScript to toggle the visibility of the registration section
+        document.getElementById("toggle-register-btn").addEventListener("click", function () {
+            var registerSection = document.getElementById("register-company");
+            if (registerSection.style.display === "none" || registerSection.style.display === "") {
+                registerSection.style.display = "block";
+            } else {
+                registerSection.style.display = "none";
+            }
+        });
+    </script>
+
+</body>
+</html>

@@ -1,0 +1,39 @@
+table {
+  border-collapse: collapse;
+  width: 100%;
+  margin: 20px auto;
+  /* Add more space around the table */
+  border: 1px solid #ddd;
+  /* Add a border to the table */
+}
+
+th,
+td {
+  border: 1px solid #ddd;
+  padding: 10px;
+  /* Increase padding for more space */
+  text-align: center;
+}
+
+
+body {
+  background-color: #f0f0f0;
+  font-weight: bold;
+  /* background-size: cover; */
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: contain;
+}
+
+button {
+  padding: 10px;
+  background-color: #007bff;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+button:hover {
+  background-color: #0062cc;
+}
