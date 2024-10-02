@@ -1,0 +1,29 @@
+body {
+    background-image: url('/home/raphaeltabengwa/Issuance tracker/PHOTO-2024-09-11-08-05-43 (1).jpg');
+    background-size: cover;
+    background-position: center;
+
+}
+
+.container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+.card {
+    border: 2px solid black;
+    padding: 50px;
+    text-align: center;
+    background-color: white;
+}
+
+.button {
+    /* background-color: green; */
+        padding: 10px 20px;
+        border: none;
+        border-radius: 5px;
+        cursor: pointer;
+        /* background-color: #4CAF50; */
+}
