@@ -44,6 +44,12 @@ app.post('/api/carbon/update', async (req, res) => {
     res.status(200).json({ message: 'Project Updated Successfully' });
 })
 
+app.post('/api/carbon/seller', async (req, res) => {
+    const { total_credits_available } = req.body
+    const allProjects = await db.all(`SELECT project_id, project_name,scope,  MAX (total_credits_available) FROM projects WHERE total_credits_available < ?`,[total_credits_available]);
+    res.status(200).json({...allProjects});
+})
+
 const PORT = process.env.PORT || 4003
 app.listen(PORT, () => console.log(`Server started ${PORT}`))
 

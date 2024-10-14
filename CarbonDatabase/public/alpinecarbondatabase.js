@@ -19,6 +19,8 @@ document.addEventListener('alpine:init', () => {
             updateCreditsAvailable: '',
             updateCreditsIssued: '',
             updateStatus: '',
+            findSellers:'',
+            sellerCredits:0,
 
             init() {
                 this.getProjects()
@@ -84,6 +86,15 @@ document.addEventListener('alpine:init', () => {
                     this.getProjects()
                 })
             },
+            findSeller(){
+                return axios.post('http://localhost:4003/api/carbon/seller',{
+                total_credits_available: this.sellerCredits,  
+            }).then(response => {
+                this.findSellers = response.data
+                console.log(this.findSellers);
+            })
+        },
+
             updateProject() {
                 return axios.post('http://localhost:4003/api/carbon/update', {
                     project_id: this.updateProjectId,
