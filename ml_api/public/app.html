@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Predict API</title>
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <div class="info">
+        <h1 style="color: black;padding: 20px;border-radius: 50%;border-color: white;background-color: whitesmoke;">Issuance Prediction</h1><br>
+
+        <!-- Input fields for data -->
+        <label for="creditsIssued">Total Credits Issued:</label>
+        <input type="number" id="creditsIssued" placeholder="Enter Total Credits Issued" required><br><br>
+
+        <label for="creditsRetired">Total Credits Retired:</label>
+        <input type="number" id="creditsRetired" placeholder="Enter Total Credits Retired" required><br><br>
+
+        <label for="reductionRemoval">Reduction / Removal:</label>
+        <input type="number" id="reductionRemoval" placeholder="Enter Reduction/Removal" required><br><br>
+
+        <label for="voluntaryStatus">Voluntary Status:</label>
+        <input type="text" id="voluntaryStatus" placeholder="Listed/Not Listed" required><br><br>
+
+        <label for="scope">Scope:</label>
+        <input type="text" id="scope" placeholder="Enter Scope" required><br><br>
+
+        <label for="projectId">Project ID:</label>
+        <input type="number" id="projectId" placeholder="Enter Project ID" required><br><br>
+
+        <label for="creditsRemaining">Total Credits Remaining:</label>
+        <input type="number" id="creditsRemaining" placeholder="Enter Total Credits Remaining" required><br><br>
+
+        <label for="vintageYear">First Year of Project (Vintage):</label>
+        <input type="number" id="vintageYear" placeholder="Enter First Year of Project" required><br><br>
+
+        <!-- Dropdown for region selection -->
+        <label for="region">Select Region:</label>
+        <select id="region" required>
+            <option value="1">North America</option>
+            <option value="2">Europe</option>
+            <option value="3">Asia</option>
+            <option value="4">Africa</option>
+            <option value="5">South America</option>
+            <option value="6">Australia</option>
+            <option value="7">Antarctica</option>
+            <option value="8">Other</option>
+        </select><br><br>
+
+        <!-- Button to send the prediction request -->
+        <button onclick="makePrediction()">Send Request</button>
+
+        <h3 id="result"></h3>
+
+        <script>
+            function makePrediction() {
+                // Collect user input values
+                const creditsIssued = document.getElementById("creditsIssued").value;
+                const creditsRetired = document.getElementById("creditsRetired").value;
+                const reductionRemoval = document.getElementById("reductionRemoval").value;
+                const voluntaryStatus = document.getElementById("voluntaryStatus").value;
+                const scope = document.getElementById("scope").value;
+                const projectId = document.getElementById("projectId").value;
+                const creditsRemaining = document.getElementById("creditsRemaining").value;
+                const vintageYear = document.getElementById("vintageYear").value;
+                const selectedRegion = document.getElementById("region").value;
+
+                // Data to send in the POST request
+                const data = {
+                    "Total Credits Issued": parseInt(creditsIssued),
+                    "Total Credits Retired": parseInt(creditsRetired),
+                    "Reduction / Removal": parseInt(reductionRemoval),
+                    "Voluntary Status": voluntaryStatus,
+                    "Scope": scope,
+                    "Project ID": parseInt(projectId),
+                    "Total Credits Remaining": parseInt(creditsRemaining),
+                    "First Year of Project (Vintage)": parseInt(vintageYear),
+                    "Region": selectedRegion,
+                };
+
+                axios.post('http://127.0.0.1:8000/predict', data)
+                    .then(response => {
+                        // Format the prediction result to 2 decimal places
+                        const prediction = parseFloat(response.data.prediction).toFixed(2);
+                        document.getElementById('result').innerText = 'Prediction: ' + prediction;
+                    })
+                // .catch(error => {
+                //     console.error('There was an error!', error);
+                // });
+            }
+        </script>
+
+    </div>
+</body>
+
+</html>

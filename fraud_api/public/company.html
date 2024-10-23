@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Order Carbon Credits</title>
+    <style>
+        /* Basic styling for the page */
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+            color: #333;
+        }
+
+        header {
+            background-color: #007BFF;
+            color: #fff;
+            padding: 10px 0;
+            text-align: center;
+        }
+
+        header ul {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+            display: flex;
+            justify-content: center;
+        }
+
+        header ul li {
+            margin: 0 15px;
+        }
+
+        header ul li a {
+            color: #fff;
+            text-decoration: none;
+            font-weight: bold;
+        }
+
+        header ul li a:hover {
+            text-decoration: underline;
+        }
+
+        section {
+            padding: 20px;
+            margin: 20px auto;
+            width: 80%;
+            max-width: 600px;
+            background-color: #fff;
+            border-radius: 5px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+
+        h2 {
+            color: #007BFF;
+            margin-top: 0;
+        }
+
+        form {
+            display: flex;
+            flex-direction: column;
+        }
+
+        label {
+            margin-top: 10px;
+            font-weight: bold;
+        }
+
+        input[type="number"],
+        select {
+            padding: 10px;
+            margin-top: 5px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            font-size: 16px;
+        }
+
+        button {
+            margin-top: 20px;
+            padding: 10px 20px;
+            background-color: #007BFF;
+            color: #fff;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 16px;
+        }
+
+        button:hover {
+            background-color: #0056b3;
+        }
+
+        #seller-list {
+            margin-top: 20px;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Header with navigation links -->
+    <header>
+        <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="company.html">Find Sellers</a></li>
+        </ul>
+    </header>
+
+    <!-- Order Section -->
+    <section id="order">
+        <h2>Order Carbon Credits</h2>
+        <form id="order-form">
+            <label for="credits">Enter the amount of credits you want to buy:</label>
+            <input type="number" id="credits" name="credits" min="1" required>
+
+            <label for="carbon-project-type">Select the type of carbon project:</label>
+            <select id="carbon-project-type" name="carbon-project-type" required>
+                <option value="">-- Select a project type --</option>
+                <option value="reforestation">Reforestation</option>
+                <option value="renewable-energy">Renewable Energy</option>
+                <option value="energy-efficiency">Energy Efficiency</option>
+                <option value="forest-conservation">Forest Conservation</option>
+            </select>
+
+            <button type="submit">Find Sellers</button>
+        </form>
+        <div id="seller-list">
+            <!-- List of companies will be dynamically displayed here -->
+        </div>
+    </section>
+
+</body>
+</html>

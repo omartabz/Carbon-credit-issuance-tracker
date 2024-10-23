@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Art of Independence</title>
+    <link rel="stylesheet" href="style.css"> <!-- Link to your CSS file -->
+</head>
+
+<body>
+    <header>
+        <nav>
+            <!-- Hamburger menu icon -->
+            <div class="menu-toggle" onclick="toggleMenu()">
+                <div></div>
+                <div></div>
+                <div></div>
+            </div>
+
+            <ul id="nav-links">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="AboutUs.html">About Us</a></li>
+                <li><a href="companies.html">Register Your Company</a></li>
+                <li><a href="contact.html">Contact</a></li>
+                <li><a href="company.html">Find Seller</a></li>
+                <li><a href="service.html">Services</a></li>
+                <li><a href="fraud-detection-dashboard.html">Fraud Detection Dashboard</a></li>
+                <li><a href="transaction-analysis.html">Transaction Analysis</a></li>
+                <li><a href="request-verification.html">Request Verification</a></li>
+                <li><a href="historical-insights.html">Historical Insights</a></li>
+                <li class="logout"><button id="logoutBtn">Logout</button></li>
+            </ul>
+        </nav>
+    </header>
+
+    <section id="hero">
+        <div class="hero-content">
+            <h1>Carbon Aware Technologies</h1>
+            <p>Monitor, Purchase, and Manage Your Carbon Credits Efficiently</p>
+            <p id="currentUser"></p> <!-- Display the current user's name here -->
+        </div>
+    </section>
+
+    
+
+    <footer>
+        <p>© 2024 Carbon Credits Tracker. All rights reserved.</p>
+    </footer>
+
+    <script type="text/javascript">
+        function toggleMenu() {
+            const navLinks = document.getElementById('nav-links');
+            navLinks.classList.toggle('active');
+        }
+
+        document.addEventListener('DOMContentLoaded', function () {
+            // Check if the user is logged in
+            const isLoggedIn = localStorage.getItem('isLoggedIn');
+            const currentUser = localStorage.getItem('currentUser');
+            
+            if (!isLoggedIn || isLoggedIn !== 'true' || !currentUser) {
+                // Redirect to login page if not logged in
+                window.location.href = "login.html";
+            } else {
+                // Show the current user's name
+                document.getElementById('currentUser').textContent = currentUser;
+            }
+
+            // Logout function: Clear login status and redirect to login page
+            document.getElementById('logoutBtn').addEventListener('click', function() {
+                console.log('Logout button clicked!');
+                // Clear login state and current user data
+                localStorage.removeItem('isLoggedIn');
+                localStorage.removeItem('currentUser');
+                // Redirect to login page
+                window.location.href = "login.html";
+            });
+        });
+    </script>
+</body>
+
+</html>
