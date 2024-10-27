@@ -56,6 +56,13 @@
     gap: 20px;
     align-items: center;
   }
+
+/* Highlight active link */
+.nav-features div a.active {
+  color: #ff6600;
+  font-weight: bold;
+  border-left: 4px solid #ff6600; /* Optional: border to further highlight */
+}
   
   /* Show hamburger icon and hide nav links on small screens */
   @media (max-width: 768px) {
