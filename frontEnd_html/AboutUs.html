@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>About Us - Carbon Credits Issuance Tracker</title>
     <style>
-        /* Basic styling for the page */
+  /* Basic styling for the page */
         body {
             font-family: Arial, sans-serif;
             margin: 0;
@@ -15,34 +15,7 @@
             color: #333;
         }
 
-        header {
-            background-color: #007BFF;
-            color: #fff;
-            padding: 10px 0;
-            text-align: center;
-        }
-
-        header ul {
-            list-style: none;
-            padding: 0;
-            margin: 0;
-            display: flex;
-            justify-content: center;
-        }
-
-        header ul li {
-            margin: 0 15px;
-        }
-
-        header ul li a {
-            color: #fff;
-            text-decoration: none;
-            font-weight: bold;
-        }
-
-        header ul li a:hover {
-            text-decoration: underline;
-        }
+        
 
         .container {
             width: 80%;
@@ -55,14 +28,15 @@
 
         h1 {
             text-align: center;
-            color: #007BFF;
+            /* color: #007BFF; */
+            color: gray;
             margin-bottom: 20px;
         }
 
         h2 {
-            color: #0056b3;
+            color:gray;
             margin-top: 20px;
-            border-bottom: 2px solid #007BFF;
+            border-bottom: 2px solid gray;
             padding-bottom: 10px;
         }
 
@@ -82,7 +56,7 @@
             width: 100px;
             height: 100px;
             margin-right: 20px;
-            border: 3px solid #007BFF;
+            border: 3px solid gray;
         }
 
         .team-member-info {
@@ -91,13 +65,13 @@
 
         .team-member-info h3 {
             margin: 0;
-            color: #007BFF;
+            color: gray;
         }
 
         footer {
             text-align: center;
             padding: 20px;
-            background-color: #007BFF;
+            background-color: #333;
             color: #fff;
             margin-top: 20px;
         }
@@ -109,9 +83,38 @@
 </head>
 
 <body>
-    <header>
-        <!-- <li><a href="index.html">Home</a></li> -->
-    </header>
+   <!-- Header -->
+   <header class="header">
+    <nav class="navbar">
+      <div class="logo-container">
+      <div class="logo">
+        <img src="../PHOTO-2024-09-11-08-05-43 (1).jpg" alt="CarbonAware Technologies">
+          </div>
+        <div class="logo-content">
+        <h2 class="carbon-aware">CarbonAware Technologies</h2>
+        <p>Monitor, Purchase, and Manage Your Carbon Credits Efficiently</p>
+    
+    </div></div>
+      
+       <!-- Hamburger icon for small screens -->
+    <div class="hamburger-icon" onclick="toggleNav()">
+        &#9776; <!-- Unicode for hamburger icon -->
+      </div>
+
+      <div class="nav-features">
+        <div><a href="../index.html">Home</a></div>
+        <div><a href="AboutUs.html">About Us</a></div>
+        <div><a href="service.html">Services</a></div>
+        <div><a href="contact.html">Contact</a></div>
+        <div id="currentUser"></div>
+      </div>
+  
+      <!-- <div class="search-login">
+        <input type="search" placeholder="Search">
+        <button class="login-btn">Log In</button>
+      </div> -->
+    </nav>
+  </header>
     
     <div class="container">
         <h1>About Us</h1>
