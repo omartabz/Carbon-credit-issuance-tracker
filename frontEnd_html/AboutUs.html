@@ -80,6 +80,48 @@
         footer p {
             margin: 0;
         }
+
+                /* Media Query for small screens */
+@media (max-width: 768px) {
+    /* Container width adjustment */
+    .container {
+        width: 95%;
+    }
+
+    /* Stack header logo and nav items vertically */
+    .header .logo-container {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    /* Hide nav features and use hamburger icon */
+    .nav-features {
+        display: none;
+        background-color: #333;
+    }
+    .hamburger-icon {
+        display: block;
+    }
+
+    /* Team member layout - vertical stack */
+    .team-member {
+        flex-direction: column;
+        text-align: center;
+    }
+    .team-member img {
+        margin: 0 auto;
+    }
+}
+
+/* Media Query for very small screens */
+@media (max-width: 480px) {
+    h1, h2 {
+        font-size: 1.2rem;
+    }
+    .team-member-info h3 {
+        font-size: 1rem;
+    }
+}
     </style>
 </head>
 
@@ -183,7 +225,24 @@
     <footer>
         <p>&copy; 2024 CarbonAware Technologies. All rights reserved.</p>
     </footer>
+ <script>
+        function toggleNav() {
+            const navFeatures = document.querySelector('.nav-features');
+            navFeatures.style.display = navFeatures.style.display === 'flex' ? 'none' : 'flex';
+        }
 
+     // Automatically add 'active' class based on current URL
+  document.addEventListener("DOMContentLoaded", () => {
+    const navLinks = document.querySelectorAll('.nav-features div a');
+    const currentPath = window.location.pathname;
+
+    navLinks.forEach(link => {
+      if (link.getAttribute('href') === currentPath) {
+        link.classList.add('active');
+      }
+    });
+  });
+    </script>
 </body>
 
 </html>
