@@ -27,15 +27,16 @@ body {
 
 button {
   padding: 10px;
-  background-color: #007bff;
+  background-color:#333;
   color: white;
   border: none;
   border-radius: 5px;
   cursor: pointer;
+  margin-top: 1.5em;
 }
 
 button:hover {
-  background-color: #0062cc;
+  background-color: gray;
 }
 
 /* General Header Styling */
