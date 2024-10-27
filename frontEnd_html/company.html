@@ -4,8 +4,9 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Order Carbon Credits</title>
+    <link rel="stylesheet" href="../features.css">
     <style>
-        /* Basic styling for the page */
+  Basic styling for the page */
         body {
             font-family: Arial, sans-serif;
             margin: 0;
@@ -14,7 +15,7 @@
             color: #333;
         }
 
-        header {
+        /* header {
             background-color: #007BFF;
             color: #fff;
             padding: 10px 0;
@@ -41,9 +42,9 @@
 
         header ul li a:hover {
             text-decoration: underline;
-        }
+        } */
 
-        section {
+         section {
             padding: 20px;
             margin: 20px auto;
             width: 80%;
@@ -51,10 +52,12 @@
             background-color: #fff;
             border-radius: 5px;
             box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            margin-top: 5em;
+            margin-bottom: 5em;
         }
 
-        h2 {
-            color: #007BFF;
+        h2 { 
+            /* color: #007BFF; */
             margin-top: 0;
         }
 
@@ -66,6 +69,7 @@
         label {
             margin-top: 10px;
             font-weight: bold;
+           
         }
 
         input[type="number"],
@@ -76,11 +80,12 @@
             border-radius: 5px;
             font-size: 16px;
         }
+    
 
         button {
             margin-top: 20px;
             padding: 10px 20px;
-            background-color: #007BFF;
+            background-color:  #333;
             color: #fff;
             border: none;
             border-radius: 5px;
@@ -89,23 +94,52 @@
         }
 
         button:hover {
-            background-color: #0056b3;
+            background-color:  gray;
         }
 
         #seller-list {
             margin-top: 20px;
         }
+
+        .order  {
+            text-align: center;
+        }
     </style>
 </head>
 <body>
 
-    <!-- Header with navigation links -->
-    <header>
-        <ul>
-            <li><a href="/home/raphaeltabengwa/Group-14-main/index.html">Home</a></li>
-            <!-- <li><a href="company.html">Find Sellers</a></li> -->
-        </ul>
-    </header>
+        <!-- Header -->
+   <header class="header">
+    <nav class="navbar">
+      <div class="logo-container">
+      <div class="logo">
+        <img src="../PHOTO-2024-09-11-08-05-43 (1).jpg" alt="CarbonAware Technologies">
+          </div>
+        <div class="logo-content">
+        <h2>CarbonAware Technologies</h2>
+        <p>Monitor, Purchase, and Manage Your Carbon Credits Efficiently</p>
+    
+    </div></div>
+      
+       <!-- Hamburger icon for small screens -->
+    <div class="hamburger-icon" onclick="toggleNav()">
+        &#9776; <!-- Unicode for hamburger icon -->
+      </div>
+
+      <div class="nav-features">
+        <div><a href="../index.html">Home</a></div>
+        <div><a href="AboutUs.html">About Us</a></div>
+        <div><a href="service.html">Services</a></div>
+        <div><a href="contact.html">Contact</a></div>
+        <div id="currentUser"></div>
+      </div>
+  
+      <!-- <div class="search-login">
+        <input type="search" placeholder="Search">
+        <button class="login-btn">Log In</button>
+      </div> -->
+    </nav>
+  </header>
 
     <!-- Order Section -->
     <section id="order">
@@ -130,6 +164,30 @@
             <!-- List of companies will be dynamically displayed here -->
         </div>
     </section>
+
+    <!-- footer container -->
+    <footer class="footer-container">
+        <div class="footer-contact-info">
+            <div class="contact-info">
+                <h2>Contact Information</h2>
+                <p><strong>Address:</strong> 69 Kingsway Ave, Auckland Park, Johannesburg, 2092</p>
+                <p><strong>Phone:</strong> +27 71529 3562</p>
+                <p><strong>Email:</strong> TONK@yourcompany.com</p>
+            </div>
+            <div class="footer-social">
+                <h2>Follow Us</h2>
+                <p>Stay connected through our social platforms:</p>
+                <ul class="social-icons">
+                    <li><a href="#"><img src="../images/facebook-icon.png" alt="Facebook"></a></li>
+                    <li><a href="#"><img src="../images/Twitter.png" alt="Twitter"></a></li>
+                    <li><a href="#"><img src="../images/linkdin.png" alt="LinkedIn"></a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>© 2024 Carbon Credits Tracker. All rights reserved.</p>
+        </div>
+    </footer>
 
 </body>
 </html>
