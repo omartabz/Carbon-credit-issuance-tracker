@@ -14,7 +14,8 @@ To **run** the project run the following command:
 ```shell
 node indexcarbondatabase.js
 ```
-To use the calculator simply enter your data and click calculate.
+## To use the calculator simply enter your data and click calculate.
 
 ## Credits
-Thank you to CodeX,Johanessburg Business School and Accenture for faciliting the development of this project.
+Thank you to CodeX,Johannesburg Business School and Accenture for faciliting the development of this project.
+
